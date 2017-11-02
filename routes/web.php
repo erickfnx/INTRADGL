@@ -31,6 +31,7 @@ Route::post('/monta', 'MontaController@store');
 Route::get('/monta/{id_monta}/edit', 'MontaController@edit');
 Route::patch('/monta/{id_monta}', 'MontaController@update');
 Route::delete('/monta/{id_monta}', 'MontaController@delete');
+Route::post('/montas/obtener-sementales', 'MontaController@obtener_semental');
 
 // Rutas de partos
 Route::get('parto/', 'PartoController@index');
@@ -103,8 +104,9 @@ Route::delete('/productora/{id_productora}', 'ProductoraController@delete');
 Route::get('/adquirido', 'AdquiridoController@index');
 Route::get('/adquirido/create', 'AdquiridoController@create');
 Route::post('/adquirido', 'AdquiridoController@store');
-Route::get('/adquirido/{id_productora}', 'AdquiridoController@edit');
-Route::delete('/adquirido/{id_productora}', 'AdquiridoController@delete');
+Route::get('/adquirido/{id_adquirido}/edit', 'AdquiridoController@edit');
+Route::patch('/adquirido/{id_adquirido}', 'AdquiridoController@update');
+Route::delete('/adquirido/{id_adquirido}', 'AdquiridoController@delete');
 
 //Rutas de Adquisicion
 Route::get('/adquisicion', 'AdquisicionController@index');
@@ -122,4 +124,44 @@ Route::get('/transferencia/{id_transferencia}/edit', 'TransferenciaController@ed
 Route::patch('/transferencia/{id_transferencia}', 'TransferenciaController@update');
 Route::delete('/transferencia/{id_transferencia}','TransferenciaController@delete');
 
-Route::post('/montas/obtener-sementales', 'MontaController@obtener_semental');
+//Rutas de carreras
+Route::get('/carrera', 'CarreraController@index');
+Route::get('/carrera/create', 'CarreraController@create');
+Route::post('/carrera', 'CarreraController@store');
+Route::get('/carrera/{id_carrera}/edit', 'CarreraController@edit');
+Route::patch('/carrera/{id_carrera}', 'CarreraController@update');
+Route::delete('/carrera/{id_carrera}','CarreraController@delete');
+
+//Rutas de grupos
+Route::get('/grupo', 'GrupoController@index');
+Route::get('/grupo/create', 'GrupoController@create');
+Route::post('/grupo', 'GrupoController@store');
+Route::get('/grupo/{id_grupo}/edit', 'GrupoController@edit');
+Route::patch('/grupo/{id_grupo}', 'GrupoController@update');
+Route::delete('/grupo/{id_grupo}','GrupoController@delete');
+
+//Rutas de materias
+Route::get('/materia', 'MateriaController@index');
+Route::get('/materia/create', 'MateriaController@create');
+Route::post('/materia', 'MateriaController@store');
+Route::get('/materia/{id_materia}/edit', 'MateriaController@edit');
+Route::patch('/materia/{id_materia}', 'MateriaController@update');
+Route::delete('/materia/{id_materia}','MateriaController@delete');
+Route::post('/grupos/obtener-grupos', 'MateriaController@obtener_grupo');
+
+
+//Rutas De Enfermedad
+Route::get('/enfermedad', 'EnfermedadController@index');
+Route::get('/enfermedad/create', 'EnfermedadController@create');
+Route::post('/enfermedad', 'EnfermedadController@store');
+Route::get('/enfermedad/{id_enfermedad}/edit', 'EnfermedadController@edit');
+Route::patch('/enfermedad/{id_enfermedad}', 'EnfermedadController@update');
+Route::delete('/enfermedad/{id_enfermedad}','EnfermedadController@delete');
+
+//Rutas De Medicamento
+Route::get('/medicamento', 'MedicamentoController@index');
+Route::get('/medicamento/create', 'MedicamentoController@create');
+Route::post('/medicamento', 'MedicamentoController@store');
+Route::get('/medicamento/{id_medicamento}/edit', 'MedicamentoController@edit');
+Route::patch('/medicamento/{id_medicamento}', 'MedicamentoController@update');
+Route::delete('/medicamento/{id_medicamento}','MedicamentoController@delete');
